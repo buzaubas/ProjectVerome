@@ -1,0 +1,26 @@
+﻿@using ProjectVerome.Models
+
+@model List<Message>
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to Education for Bomjaras</h1>
+
+    <form asp-action="Home" asp-controller="Tasks" method="post">
+        <input class="form-control" type="text" name="question" />
+
+        <button type="submit">button</button>
+    </form>
+
+    <br />
+
+    <p>Your chat my chat</p>
+
+    @if (Model != null)
+    {
+        @foreach (var message in Model)
+        {
+            <p>@message.Content</p>
+        }
+    }
+
+</div>
